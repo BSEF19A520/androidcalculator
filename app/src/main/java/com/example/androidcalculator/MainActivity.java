@@ -76,4 +76,27 @@ public class MainActivity extends AppCompatActivity {
         s =s+"0";
         txt.setText(s);
     }
+    public void plus(View view) {
+        String s = txt.getText().toString();
+        s =s+"+";
+        txt.setText(s);
+    }
+
+    public void minus(View view) {
+        String s = txt.getText().toString();
+        s =s+"-";
+        txt.setText(s);
+    }
+
+    public void mul(View view) {
+        String s = txt.getText().toString();
+        s =s+"*";
+        txt.setText(s);
+    }
+
+    public void divide(View view) {
+        String s = txt.getText().toString();
+        s =s+"/";
+        txt.setText(s);
+    }
 }
