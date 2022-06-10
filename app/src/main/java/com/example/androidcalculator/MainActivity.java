@@ -161,4 +161,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+    public void backspace(View view) {
+        String s = (String) txt.getText();
+        String numb = new String();
+        for(int i = 0;i<s.length()-1;i++)
+        {
+
+            String o = Character.toString(s.charAt(i));
+            numb = numb + o;
+
+        }
+        txt.setText(numb);
+
+    }
+
 }
