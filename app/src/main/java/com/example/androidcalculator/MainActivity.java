@@ -174,5 +174,15 @@ public class MainActivity extends AppCompatActivity {
         txt.setText(numb);
 
     }
+    public void clear(View view) {
+        txt.setText("");
+    }
+
+    public void percent(View view) {
+        String s = txt.getText().toString();
+        s =s+"%";
+        txt.setText(s);
+
+    }
 
 }
