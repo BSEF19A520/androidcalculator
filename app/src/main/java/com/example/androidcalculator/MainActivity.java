@@ -2,6 +2,7 @@ package com.example.androidcalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -98,5 +99,66 @@ public class MainActivity extends AppCompatActivity {
         String s = txt.getText().toString();
         s =s+"/";
         txt.setText(s);
+    }
+    @SuppressLint("SetTextI18n")
+    public void equal(View view) {
+        String s = txt.getText().toString();
+        if(s.length()>0)
+        {
+            StringBuilder numb= new StringBuilder();
+            for(int i = 0;i<s.length();i++)
+            {
+                if(s.charAt(i)>='0' && s.charAt(i)<='9')
+                {
+                    String o = Character.toString(s.charAt(i));
+                    numb.append(o);
+                }
+                else if(s.charAt(i)=='+' ||s.charAt(i)=='-' ||s.charAt(i)=='*' ||s.charAt(i)=='/' || s.charAt(i)=='%')
+                {
+                    operation = Character.toString(s.charAt(i));
+                    index = i;
+                    break;
+                }
+            }
+            num = Integer.parseInt(numb.toString());
+            numb = new StringBuilder();
+            for(int i = index;i<s.length();i++)
+            {
+                if(s.charAt(i)>='0' && s.charAt(i)<='9')
+                {
+                    String o = Character.toString(s.charAt(i));
+                    numb.append(o);
+                }
+
+            }
+            num2 = Integer.parseInt(numb.toString());
+            if(operation.equals("+"))
+            {
+                num = num + num2;
+                txt.setText(Integer.toString(num));
+            }
+            else if(operation.equals("/"))
+            {
+                double d = (double)num/(double)num2;
+                txt.setText(Double.toString(d));
+            }
+            else if(operation.equals("-"))
+            {
+                num = num - num2;
+                txt.setText(Integer.toString(num));
+            }
+            else if(operation.equals("*"))
+            {
+                num = num * num2;
+                txt.setText(Integer.toString(num));
+            }
+            else if(operation.equals("%"))
+            {
+                double d = num* 0.01;
+                txt.setText(Double.toString(d));
+
+            }
+        }
+
     }
 }
