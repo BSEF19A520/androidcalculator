@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
         }
         txt.setText(numb);
 
-    }
+    } 
     public void clear(View view) {
         txt.setText("");
     }
