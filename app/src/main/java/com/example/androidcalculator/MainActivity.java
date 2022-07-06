@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
             numb = numb + o;
 
         }
-        txt.setText(numb);
+        txt.setText(numb); 
 
     }  
     public void clear(View view) {
